@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+section{
+    border: 1px greenyellow solid;
+}
+#shortapps{
+    width: 32%;
+}
+#longapps{
+    width: 72%;
+}
+
+article{
+    border: 1px royalblue solid;
+}
