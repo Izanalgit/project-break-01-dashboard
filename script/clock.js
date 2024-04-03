@@ -1,10 +1,10 @@
 //Enlaces DOM
-const sectionAPP = document.getElementById("shortapps");
+const sectionclkAPP = document.getElementById("shortapps");
 
-let thisApp = document.createElement("article");
-thisApp.id = "clockapp";
+let clkApp = document.createElement("article");
+clkApp.id = "clockapp";
 
-sectionAPP.appendChild(thisApp);
+sectionclkAPP.appendChild(clkApp);
 
 const clockapp = document.getElementById("clockapp");
 
@@ -51,10 +51,10 @@ function phrasetimer(actualhour){
 const crt = (data) =>data<10?"0"+data:data;
 
 //Render
-function cleaner(){
+function cleanerClock(){
     clockapp.innerHTML=``;
 }
-function render(){
+function renderClock(){
     clockapp.innerHTML=(
         `<h2>${time().fullH()}</h3>
         <h4>${time().fullD()}</h4>
@@ -64,8 +64,8 @@ function render(){
 
 //Bucle 1s
 setInterval(() => {
-    cleaner();
-    render();
+    cleanerClock();
+    renderClock();
 },1000);
 
 
