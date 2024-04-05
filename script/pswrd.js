@@ -18,7 +18,7 @@ pswrdapp.innerHTML = (
     `<h3>Generador de contraseñas</h3>
     <p>Derermina el tamaño con un valor entre ${minpwd} y ${maxpwd} :</p>
     <input type="number" placeholder="${minpwd}" id="pswlength" min="${minpwd}" max="${maxpwd}">
-    <button id="setlength"></button>
+    <button id="setlength" class="epicBtn"></button>
     <span id="paswd"></span>`
 );
 
