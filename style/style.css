@@ -1,9 +1,14 @@
+/*FONDO DE PANTALLA*/
+body{
+    background-image: url(/assets/imgs/m1.png);
+}
+
+/* ESTILO BASE */
 main {
     display: flex;
     flex-direction: row;
-}
-section{
-    border: 1px greenyellow solid;
+
+    
 }
 #shortapps{
     width: 32%;
@@ -13,5 +18,95 @@ section{
 }
 
 article{
-    border: 1px royalblue solid;
+    margin: 1%;
+    
+    border: 2px goldenrod solid;
+    border-radius: 15px;
+
+    color: gold;
+    background-color: black;
+    opacity: 0.8;
+}
+
+/* Botones - General */
+button{
+margin: 1%;
+
+    color: gold;
+    background-color: black;
+
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+}
+button:hover{
+    background-image: linear-gradient(gold, black, gold);
+}
+
+/* Botones - Epic Button  */
+.epicBtn{
+    padding: .7em;
+    
+    border: 0;
+    border-radius: 50px;
+
+    background-image: radial-gradient(black 5%, gold 60%);
+}
+.epicBtn:hover{
+    background-image: radial-gradient(green 5%, gold 60%);
+}
+
+/* Inputs */
+
+input{
+    color:gold;
+    background-color: black;
+
+    border: 1px solid goldenrod;
+    border-radius: .5em;
+
+    text-align: center;
+}
+
+/* Selects */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance:none; 
+      margin: 0; 
+}
+select{
+    padding: .5%;
+
+    color: gold;
+    background-color: black;
+
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px greenyellow; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-image: radial-gradient(black 10%, gold 90%); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-image: radial-gradient(black 10%, greenyellow 90%);
+}
+
+/*Links*/
+a{
+  text-decoration: none;
+  color: gold;
+  font-size: larger;  
+}
+a:hover{
+    background-image: radial-gradient(black 70%, greenyellow 100%,black 100%);
 }

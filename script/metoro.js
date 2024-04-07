@@ -159,7 +159,7 @@ function  renderMeteoro (city){
             <h4>Viento : ${viento}km/h</h4>
         </div>
         <div id="climaPrevision"></div>
-        <button id="restCitBtn"></button>`
+        <button id="restCitBtn">Nueva ciudad</button>`
     );
     metoroapp.appendChild(domMetoro);
 
@@ -180,6 +180,7 @@ function  renderMeteoro (city){
     const restCitBtn = document.getElementById("restCitBtn");  
     restCitBtn.addEventListener("click",()=>{
         initMetoroRender ();
+        citypersist =  "";
     });
 }
 
@@ -191,7 +192,9 @@ initMetoroRender ();
 
 //un refresh del utlimo fetch y rerender?? -> set interval con renderMeteoro([localStorage?]) cada hora 
 setInterval(() => {
-    let metorologiaAutoRender = document.getElementById("metorologia");
-    metorologiaAutoRender.remove();
-    getCountry(citypersist);
-},3600000);//faltaria un localstorage??
+    if(citypersist){
+        let metorologiaAutoRender = document.getElementById("metorologia");
+        metorologiaAutoRender.remove();
+        getCountry(citypersist);
+    }
+},300000);//faltaria un localstorage??

@@ -20,6 +20,9 @@
 #timer *{
     margin-bottom: 0;
 }
+#timer h2{
+    margin: 1%;
+}
 #timer h4{
     margin: auto auto 0 3%;
 }
