@@ -108,24 +108,35 @@ function eraseLink (link){
 
 //Render
 
+//Render inicial
 function initLinkRender (){
     linkBag=takeLinks();
     cleanerLink();
     renderLink();
 }
 
+//Render de limpieza
 function cleanerLink(){
     linkList.innerHTML=``;
 }
 
+//Render lista de links
 function renderLink (){
+    //Seguro lista urls campos perdidos
     if(linkBag[0].length !== linkBag[1].length){console.log(new Error("ADVERTENCIA: lista comprometida!!"));return;}
+
+    //Seguro url correcta
+    const urlCorrector =(url)=>{
+        if(!url.includes("https://") && !url.includes("http://")) return `https://${url}`;
+        else {console.log(url); return url;}
+   
+    }
     
     //Render lista links con su boton
     for(let link=0 ; link<linkBag[0].length ; link++){
         let newLink = document.createElement("li")
-        newLink.innerHTML=(
-            `<a href="${linkBag[1][link]}">${linkBag[0][link]}</a>
+        newLink.innerHTML=( 
+            `<a href="${urlCorrector(linkBag[1][link])}" target="_blank">${linkBag[0][link]}</a> 
             <button class="deleteLink">Borrar</button>`
         );
         linkList.appendChild(newLink);
