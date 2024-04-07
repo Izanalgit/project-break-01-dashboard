@@ -1,3 +1,4 @@
+/* APP  */
 #clockapp{
     display: flex;
     flex-wrap: wrap;
@@ -7,7 +8,11 @@
 
     padding: 3%;
 }
-
+/* Mensage  */
+#clockapp h4{
+    margin: 2% 0;
+}
+/* Hora y fecha  */
 #timer{
     display: flex;
     flex-direction: row;
@@ -21,7 +26,9 @@
     margin-bottom: 0;
 }
 #timer h2{
-    margin: 1%;
+    margin: 0;
+
+    color: whitesmoke;
 }
 #timer h4{
     margin: auto auto 0 3%;

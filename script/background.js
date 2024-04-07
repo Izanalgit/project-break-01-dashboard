@@ -22,6 +22,6 @@ setInterval(() => {
     document.body.style.backgroundImage = `url("${bgLib[counter]}")`;
     
     // document.body.style.backgroundImage = `url("${bgLib[randomBackground(bgLib)]}")`;
-},300);
+},60000);
 
 //en random no se aprecia caer el codigo como en las pelis, por eso le he puesto un counter y en orden

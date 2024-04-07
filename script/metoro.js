@@ -20,8 +20,10 @@ const metoroapp = document.getElementById("metoro");
 const domSelCit = (
     `<div id="slectCity">
         <h4>Introduce tu ciudad:</h4>
-        <input type="text" id="cities" name="cities">
-        <button id="slctCitBtn" class="epicBtn"></button>
+        <div class="SlcWithBtn">
+            <input type="text" id="cities" name="cities" placeholder="Ciudad">
+            <button id="slctCitBtn" class="epicBtn"></button>
+        </div>
     </div>`
 );
 

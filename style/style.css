@@ -2,6 +2,7 @@
 body{
     background-image: url("./../assets/imgs/m1.png");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* ESTILO BASE */
@@ -37,7 +38,7 @@ margin: 1%;
     background-color: black;
 
     border: 1px solid goldenrod;
-    border-radius: 5px;
+    border-radius: 0.5em;
 }
 button:hover{
     background-image: linear-gradient(gold, black, gold);
@@ -46,14 +47,22 @@ button:hover{
 /* Botones - Epic Button  */
 .epicBtn{
     padding: .7em;
+    margin: 1em;
     
     border: 0;
-    border-radius: 50px;
+    border-radius: 1em;
 
     background-image: radial-gradient(black 5%, gold 60%);
 }
 .epicBtn:hover{
     background-image: radial-gradient(green 5%, gold 60%);
+}
+
+/* Input con boton*/
+.SlcWithBtn{
+    display: flex;
+    align-items: center;
+    margin: 1%;
 }
 
 /* Inputs */
@@ -82,7 +91,7 @@ select{
     background-color: black;
 
     border: 1px solid goldenrod;
-    border-radius: 10px;
+    border-radius: 0.5em;
 }
 
 /* Scroll bar */
@@ -91,12 +100,14 @@ select{
     width: 15px;
 }
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px greenyellow; 
-    border-radius: 10px;
+    background-color: black;
+
+    box-shadow: inset 0 0 5px greenyellow;
+    border-radius: 0.5em;
 }
 ::-webkit-scrollbar-thumb {
     background-image: radial-gradient(black 10%, gold 90%); 
-    border-radius: 10px;
+    border-radius: 0.5em;
 }
 ::-webkit-scrollbar-thumb:hover {
     background-image: radial-gradient(black 10%, greenyellow 90%);
@@ -106,7 +117,9 @@ select{
 a{
   text-decoration: none;
   color: gold;
-  font-size: larger;  
+  font-size: larger;
+  
+  margin: auto 0;
 }
 a:hover{
     background-image: radial-gradient(black 70%, greenyellow 100%,black 100%);
