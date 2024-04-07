@@ -19,9 +19,9 @@ let counter = 0;
 setInterval(() => {
     counter++;
     if (counter >= bgLib.length) counter = 0;
-    document.body.style.backgroundImage = `url("${bgLib[counter]}")`;
+    document.body.style.backgroundColor = `url("${bgLib[counter]}")`;
     
-    // document.body.style.backgroundImage = `url("${bgLib[randomBackground(bgLib)]}")`;
-},60000);
+    // document.body.style.backgroundColor = `url("${bgLib[randomBackground(bgLib)]}")`;
+},1000);
 
 //en random no se aprecia caer el codigo como en las pelis, por eso le he puesto un counter y en orden
