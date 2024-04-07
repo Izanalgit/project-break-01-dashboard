@@ -17,8 +17,10 @@ const pswrdapp = document.getElementById("pswrdapp");
 pswrdapp.innerHTML = (
     `<h3>Generador de contraseñas</h3>
     <p>Derermina el tamaño con un valor entre ${minpwd} y ${maxpwd} :</p>
-    <input type="number" placeholder="${minpwd}" id="pswlength" min="${minpwd}" max="${maxpwd}">
-    <button id="setlength" class="epicBtn"></button>
+    <div id="pswimput">
+        <input type="number" placeholder="${minpwd}" id="pswlength" min="${minpwd}" max="${maxpwd}">
+        <button id="setlength" class="epicBtn"></button>
+    </div>
     <span id="paswd"></span>`
 );
 

@@ -1,0 +1,53 @@
+/* APP */
+#metoro{
+    padding: 1%;
+}
+#metorologia{
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    margin: 3%;
+}
+
+/* Titulo ciudad */
+#climaTitle{
+    display: flex;
+    height: fit-content;
+
+    position: absolute;
+    right: 10%;
+}
+#climaTitle *{
+    margin: 20% auto auto;
+}
+#climaTitle img{
+    position: absolute;
+    z-index: -1;
+
+    margin: 0 auto auto;
+}
+
+/* Clima actual */
+/* #climaActual{
+
+} */
+#climaActual h3,h4{
+    margin: 0;
+}
+
+
+
+/* Clima previsto */
+#climaPrevision{
+    display: flex;
+
+    overflow: auto;
+
+    margin-top: 3%;
+}
+
+.horaprev{
+    width: 10%;
+}

@@ -2,6 +2,8 @@
 const apiKey = "4f01b093cae44f84915164736240504";
 const apiRoot = "https://api.weatherapi.com/v1/";
 
+let citypersist = "";
+
 //Enlaces DOM
 const sectionmetAPP = document.getElementById("longapps");
 
@@ -116,7 +118,8 @@ function renderSelectCit (city){
     //Funcionalidad boton pais
     const slctConBtn = document.getElementById("slctConBtn");  
     slctConBtn.addEventListener("click",()=>{
-        getCountry(contries.value);
+        citypersist = contries.value;
+        getCountry(citypersist);
     });
 }
 
@@ -145,7 +148,7 @@ function  renderMeteoro (city){
     domMetoro.innerHTML = (
         `<div id="climaTitle">
             <h2>${ciudad}</h2>
-            <h3>${pais}</h3>
+            <h3>(${pais})</h3>
             <img src="${imggen}" alt="imagen clima">
         </div>   
         <div id="climaActual">
@@ -187,4 +190,8 @@ initMetoroRender ();
 //-> parametro en initrender para el if -> func borrar del localstorage en restCitBtn
 
 //un refresh del utlimo fetch y rerender?? -> set interval con renderMeteoro([localStorage?]) cada hora 
-
+setInterval(() => {
+    let metorologiaAutoRender = document.getElementById("metorologia");
+    metorologiaAutoRender.remove();
+    getCountry(citypersist);
+},3600000);//faltaria un localstorage??

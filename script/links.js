@@ -14,10 +14,10 @@ const linksapp = document.getElementById("links");
 linksapp.innerHTML=(
     `<h3>Biblioteca de Enlaces</h3>
     <div>
-        <input type="text" id="linkname" name="linkname">
-        <input type="url" id="linkurl" name="linkurl">
+        <input type="text" id="linkname" name="linkname" placeholder="Nombre">
+        <input type="url" id="linkurl" name="linkurl" placeholder="www.ejemplo.com">
     </div>
-    <button id="addLink">añadir link</button>
+    <button id="addLink">Añadir link</button>
     <ul></ul>
     <button id="eraseAll">Limpiar lista</button>`
 );

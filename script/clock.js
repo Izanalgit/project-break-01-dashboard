@@ -56,8 +56,10 @@ function cleanerClock(){
 }
 function renderClock(){
     clockapp.innerHTML=(
-        `<h2>${time().fullH()}</h3>
-        <h4>${time().fullD()}</h4>
+        `<div id="timer">
+            <h2>${time().fullH()}</h3>
+            <h4>${time().fullD()}</h4>
+        </div>
         <h4>${phrase[phrasetimer(time().hour)]}</h4>`
     );
 }

@@ -1,0 +1,32 @@
+/* APP */
+#links{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 3% 3%;
+}
+
+
+/* Añadir link */
+#links div{
+    display: flex;  
+}
+#linkname{
+    width: 30%;
+
+    text-align: center;
+}
+#linkurl{
+    width: 70%;
+
+    text-align: center;
+}
+
+
+/* Lista links */
+#links li{
+    list-style: none;
+
+    display: flex;
+    justify-content:space-between ;
+}
