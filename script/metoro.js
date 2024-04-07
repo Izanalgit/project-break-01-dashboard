@@ -121,6 +121,7 @@ function renderSelectCit (city){
     const slctConBtn = document.getElementById("slctConBtn");  
     slctConBtn.addEventListener("click",()=>{
         citypersist = contries.value;
+        cityPersitentAdd(citypersist);
         getCountry(citypersist);
     });
 }
@@ -141,7 +142,7 @@ function  renderMeteoro (city){
 
     //DOM Selector de pais -> HIDDE
     let slectContry = document.getElementById("slectContry");
-    slectContry.style.display="none";
+    if(slectContry)slectContry.style.display="none";
 
     //DOM Info API Meteorologia
     //Clima actual
@@ -183,20 +184,41 @@ function  renderMeteoro (city){
     restCitBtn.addEventListener("click",()=>{
         initMetoroRender ();
         citypersist =  "";
+        cityPersitentRmv ();
     });
+}
+
+//Persistencia
+
+function cityPersitentCheck (){//Chekea localSotare (rico reciclage)
+    const cityOwn = () => localStorage.getItem("myCity"); 
+    const cityCheck = () => cityOwn()?true:false;           
+
+    if(!cityCheck()) return false;
+    else return JSON.parse(cityOwn());
+}
+function cityPersitentAdd (url){ //Añade ciudad la localSorage
+    localStorage.setItem("myCity", JSON.stringify(url));
+}
+function cityPersitentRmv (){ //Borra la ciudad del localSotorage
+    localStorage.removeItem("myCity");
 }
 
 //Eventos
 
-initMetoroRender ();
-//Un if de localStorage con la ciudad?? -> func mirar localstorage 
-//-> parametro en initrender para el if -> func borrar del localstorage en restCitBtn
+//Chekeo persistencia
+let cityUrlCreck=cityPersitentCheck ()
+if(cityUrlCreck){//Render persistente
+    metoroapp.innerHTML=`<h3>Estación meteorológica</h3>`;
+    citypersist=cityUrlCreck;
+    getCountry(cityUrlCreck);
+}else initMetoroRender ();//Render inicial
 
-//un refresh del utlimo fetch y rerender?? -> set interval con renderMeteoro([localStorage?]) cada hora 
+//Api refresh
 setInterval(() => {
     if(citypersist){
         let metorologiaAutoRender = document.getElementById("metorologia");
         metorologiaAutoRender.remove();
         getCountry(citypersist);
     }
-},300000);//faltaria un localstorage??
+},300000);
