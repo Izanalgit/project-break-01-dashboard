@@ -83,8 +83,12 @@ function cleanerPwd(){
 
 function renderPwd (){
     let lngt = document.getElementById("pswlength");
-    if((lngt.value >= minpwd) && (lngt.value <= maxpwd))
+    if((lngt.value >= minpwd) && (lngt.value <= maxpwd))//Seguro rango pasw correcto
     paswd.innerHTML=`${generator(lngt.value)}`;
+    else{
+        alert("Trasteando el rango de la pasword?");
+        paswd.innerHTML= "admin1234"
+    }
 }
 
 //Event render
