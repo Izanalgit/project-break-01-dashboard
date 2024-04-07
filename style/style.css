@@ -1,7 +1,6 @@
 /*FONDO DE PANTALLA*/
 body{
-    /* background-image: url("./../assets/imgs/m1.png"); */
-    background-size: cover;
+    background-image: url("./assets/imgs/m1.png");   
 }
 
 /* ESTILO BASE */
