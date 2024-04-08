@@ -84,7 +84,8 @@ function cleanerPwd(){
 function renderPwd (){
     let lngt = document.getElementById("pswlength");
     if((lngt.value >= minpwd) && (lngt.value <= maxpwd))//Seguro rango pasw correcto
-    paswd.innerHTML=`${generator(lngt.value)}`;
+    // paswd.innerHTML=`${generator(lngt.value)}`;
+    thaHackPasRenderPro(generator(lngt.value),10);
     else{
         alert("Trasteando el rango de la pasword?");
         paswd.innerHTML= "admin1234"
@@ -106,3 +107,49 @@ pswlength.addEventListener("keypress", (event) => {
     }
   });
   
+
+//Ida de olla >;P
+
+function thaHackPasRenderPro (pasword,repes){
+    let borningPas = "";
+
+    const timer = (ms) => new Promise((res) => setTimeout(res, ms))//Esta pasada no es mia, stackoverflow
+
+    async function thaMagic () { 
+        for (let char = 0; char < pasword.length; char++) {
+            paswd.innerHTML=borningPas;
+        
+            for (let repe=0;repe<=repes;repe++){
+                
+                paswd.innerHTML=(
+                    `<span style="color:greenyellow">${borningPas}</span><span style="color:white">${genchar()}</span>`
+                );
+                await timer(100);
+                
+            }
+            borningPas += pasword.charAt(char);
+            await timer(100);
+        }
+        paswd.innerHTML=pasword;
+    }
+    thaMagic();
+    
+    //Codigo propio original:
+    // for (let char=0;char<pasword.length;char++){
+        
+    //     paswd.innerHTML=borningPas;
+        
+    //     for (let repe=0;repe<=repes;repe++){
+            
+    //         paswd.innerHTML=`${borningPas}${genchar()}`
+            
+    //     }
+    //     borningPas += pasword.charAt(char);   
+    // }
+    // paswd.innerHTML=pasword;
+
+    paswd.addEventListener("click",()=>{
+        navigator.clipboard.writeText(pasword);
+        alert("Contraseña copiada!");
+    })
+}
