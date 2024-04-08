@@ -2,6 +2,8 @@
 const minpwd = 12; //quieres bajarlo, lo se
 const maxpwd = 50;
 
+let eventSecure = true;
+
 //Enlaces DOM
 const sectionpswAPP = document.getElementById("shortapps");
 
@@ -83,10 +85,11 @@ function cleanerPwd(){
 
 function renderPwd (){
     let lngt = document.getElementById("pswlength");
-    if((lngt.value >= minpwd) && (lngt.value <= maxpwd))//Seguro rango pasw correcto
-    // paswd.innerHTML=`${generator(lngt.value)}`;
-    thaHackPasRenderPro(generator(lngt.value),10);
-    else{
+    if((lngt.value >= minpwd) && (lngt.value <= maxpwd)){//Seguro rango pasw correcto
+        // paswd.innerHTML=`${generator(lngt.value)}`;
+        eventSecure = false;//Seguro cola de eventos
+        thaHackPasRenderPro(generator(lngt.value),10);
+    }else{
         alert("Trasteando el rango de la pasword?");
         paswd.innerHTML= "admin1234"
     }
@@ -95,12 +98,14 @@ function renderPwd (){
 //Event render
 
 setlength.addEventListener("click",(()=>{
-    cleanerPwd();
-    renderPwd();    
+    if(eventSecure){//Seguro cola de eventos
+        cleanerPwd();
+        renderPwd();
+    }    
 }))
 
 pswlength.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && eventSecure) {
         event.preventDefault();
         cleanerPwd();
         renderPwd();
@@ -112,10 +117,12 @@ pswlength.addEventListener("keypress", (event) => {
 
 function thaHackPasRenderPro (pasword,repes){
     let borningPas = "";
+    
 
     const timer = (ms) => new Promise((res) => setTimeout(res, ms))//Esta pasada no es mia, stackoverflow
 
     async function thaMagic () { 
+        
         for (let char = 0; char < pasword.length; char++) {
             paswd.innerHTML=borningPas;
         
@@ -131,9 +138,9 @@ function thaHackPasRenderPro (pasword,repes){
             await timer(100);
         }
         paswd.innerHTML=pasword;
+        eventSecure = true;//Seguro cola de eventos
     }
     thaMagic();
-    
     //Codigo propio original:
     // for (let char=0;char<pasword.length;char++){
         
@@ -148,6 +155,7 @@ function thaHackPasRenderPro (pasword,repes){
     // }
     // paswd.innerHTML=pasword;
 
+    //Evento copia de la contraseña
     paswd.addEventListener("click",()=>{
         navigator.clipboard.writeText(pasword);
         alert("Contraseña copiada!");
