@@ -33,6 +33,9 @@ let linkBag = [[],[]];
 const linkChest = () => localStorage.getItem("linkChest");  //Link localStorage
 const linkCheck = () => linkChest()?true:false;             //Check localStorage
 
+//Seguro url correcta
+const urlCorrector =(url)=>!url.includes("https://") && !url.includes("http://")?`https://${url}`:url
+
 //Devuelve contenido del localStorage o un mensage de vacio
 function takeLinks (){
     if(!linkCheck())return "Aquí saldrá tu lista de links !";
@@ -57,11 +60,19 @@ function storageLinkBag (){
         console.log(new Error(mensgnull))
         return;
     }
-
+    
+    //Control url valida
+    if(!URL.canParse(urlCorrector(linkurl.value))){
+        const mensValid = "No es una URL"
+            
+        alert(mensValid)
+        console.log(new Error(mensValid))
+        return;
+    }
+    
     //Control url realista
-    const libUrlreal = ["www.","https://","http://",".com"];
+    const libUrlreal = [".com",".es",".org",".io",".co",".ca",".net",".us"];
     if(!libUrlreal.some((urlfrag)=>linkurl.value.includes(urlfrag))) alert("AVISO: Eso no parece una url eh!");
-   
 
     //Control linkBag con mensaje vacio inicial
     if(linkBag.length !== 2){
@@ -124,21 +135,24 @@ function cleanerLink(){
 function renderLink (){
     //Seguro lista urls campos perdidos
     if(linkBag[0].length !== linkBag[1].length){console.log(new Error("ADVERTENCIA: lista comprometida!!"));return;}
-
-    //Seguro url correcta
-    const urlCorrector =(url)=>{
-        if(!url.includes("https://") && !url.includes("http://")) return `https://${url}`;
-        else {console.log(url); return url;}
-   
-    }
     
     //Render lista links con su boton
     for(let link=0 ; link<linkBag[0].length ; link++){
         let newLink = document.createElement("li")
-        newLink.innerHTML=( 
-            `<a href="${urlCorrector(linkBag[1][link])}" target="_blank">${linkBag[0][link]}</a> 
-            <button class="deleteLink">Borrar</button>`
-        );
+        if(linkBag[0][link].length > 30){
+            newLink.innerHTML=( 
+                `<div class ="etcDiv">
+                    <a href="${urlCorrector(linkBag[1][link])}" target="_blank">${linkBag[0][link]}</a>
+                    <span class ="etcDots">...</span>
+                </div> 
+                <button class="deleteLink">Borrar</button>`
+            );
+        }else{
+            newLink.innerHTML=( 
+                `<a href="${urlCorrector(linkBag[1][link])}" target="_blank">${linkBag[0][link]}</a> 
+                <button class="deleteLink">Borrar</button>`
+            );
+        }
         linkList.appendChild(newLink);
     }
 

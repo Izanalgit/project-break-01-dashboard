@@ -29,4 +29,28 @@
 
     display: flex;
     justify-content:space-between ;
+
+    width: 100%;
 }
+
+/*Nombres de link largos*/
+.etcDiv{
+    max-width: 30%;
+
+}
+.etcDiv a{
+    overflow:hidden;
+}
+.etcDiv:hover{
+    overflow:visible;
+    overflow-wrap: break-word;
+}
+/* Span puntitos */
+.etcDots{
+    font-weight: bolder;
+    margin: auto 0;
+}
+.etcDiv:hover .etcDots{
+    display: none;
+}
+

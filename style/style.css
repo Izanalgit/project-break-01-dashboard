@@ -37,6 +37,8 @@ margin: 1%;
 
     border: 1px solid goldenrod;
     border-radius: 0.5em;
+
+    height: fit-content;
 }
 button:hover{
     background-image: linear-gradient(gold, black, gold);
