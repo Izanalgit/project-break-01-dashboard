@@ -26,11 +26,10 @@ setInterval(() => {
 
 
 //Evento botones NAV
+const mainDOM = document.querySelector("main");
 
 const navButtons = document.querySelectorAll(".navBtn");
-
 const homeBtn = document.getElementById("homeBtn");
-homeBtn.style.display="none";
 
 const allarticles = document.querySelectorAll("article");
 
@@ -39,11 +38,17 @@ for(let but in navButtons){
     if(but<navButtons.length){
         navButtons[but].addEventListener("click", () =>{
             
-            homeBtn.style.display="block";
+            mainDOM.classList.add("centerApps");
+            homeBtn.classList.remove("hidden");
 
             let actualArt = navButtons[but].id.slice(1);
             let actualApp = document.getElementById(actualArt);
             actualApp.style.display="flex";
+
+            let containerApp = document.querySelector(`#shortapps:has(> #${actualApp.id})`);
+            containerApp?
+            mainDOM.classList.add("centerShortApp"):
+            mainDOM.classList.remove("centerShortApp");
         
             for(let artcl of allarticles){
                 if(artcl.id!==actualArt){
@@ -56,6 +61,8 @@ for(let but in navButtons){
 
 //Boton Home
 homeBtn.addEventListener("click",()=>{
-    homeBtn.style.display="none";
+    mainDOM.classList.remove("centerApps");
+    homeBtn.classList.add("hidden");
+    mainDOM.classList.remove("centerShortApp");
     for(let artcl of allarticles)artcl.style.display="flex";
 })

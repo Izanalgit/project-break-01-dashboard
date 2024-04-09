@@ -18,3 +18,7 @@
     overflow-wrap: anywhere;
     text-align: center;
 }
+/* Nav button */
+#bpswrdapp{
+    background-image: url("/assets/icons/paswd.png");
+}

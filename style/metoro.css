@@ -27,7 +27,7 @@
     right: 10%;
 }
 #climaTitle *{
-    margin: 20% auto auto;
+    margin: 30% auto auto;
 }
 #climaTitle img{
     position: absolute;
@@ -57,4 +57,9 @@
 
 .horaprev{
     width: 10%;
+}
+
+/* Nav button */
+#bmetoro{
+    background-image: url("/assets/icons/metoro.png");
 }

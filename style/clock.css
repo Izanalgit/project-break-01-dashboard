@@ -33,3 +33,8 @@
 #timer h4{
     margin: auto auto 0 3%;
 }
+
+/* Nav button */
+#bclockapp{
+    background-image: url("/assets/icons/clock.png");
+}
