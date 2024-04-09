@@ -59,3 +59,19 @@
 #blinks{
     background-image: url("/assets/icons/links.png");
 }
+
+
+
+/* Resposividad */
+@media (max-width:600px){
+    #links ul{
+        padding: 0;
+    }
+    #links a{
+        font-size: small;
+    }
+    .etcDiv{
+        max-width: 60%;    
+    }
+
+}

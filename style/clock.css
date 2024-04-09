@@ -38,3 +38,13 @@
 #bclockapp{
     background-image: url("/assets/icons/clock.png");
 }
+
+
+/* Resposividad */
+
+@media (max-width:600px){
+    #timer{
+        flex-direction: column;
+    }
+
+}

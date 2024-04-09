@@ -57,9 +57,46 @@
 
 .horaprev{
     width: 10%;
+
+    padding: 2%;
+
+    font-size: small;
 }
 
 /* Nav button */
 #bmetoro{
     background-image: url("/assets/icons/metoro.png");
+}
+
+
+
+/* Resposividad */
+@media (max-width:600px){
+    #metoro{
+        padding: 3%
+    }
+
+
+    #climaTitle, #climaTitle img{
+        position: relative;
+    }
+    #climaTitle{
+        flex-direction: column;
+        margin: auto;
+        right: 0;
+    }
+    #climaTitle *{
+        margin: 0;
+    }
+
+    .horaprev{
+        width: 20%;
+
+        border-top: .1em solid cornflowerblue;
+        border-bottom: .1em solid cornflowerblue;
+        border-radius: .5em;
+    }
+    .horaprev p{
+        font-size:xx-small;
+    }
 }
