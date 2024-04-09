@@ -1,3 +1,7 @@
+/* ¡¡IMPORTANTE!!
+-> se declara el tipo de article en el script
+-> todos los articles deven ser flex para el buen funcionamiento del NAV */
+
 /*FONDO DE PANTALLA*/
 body{
     background-image: url("./../assets/imgs/m1.png");   
@@ -124,3 +128,5 @@ a{
 a:hover{
     background-image: radial-gradient(black 70%, greenyellow 100%,black 100%);
 }
+
+/* NAV  */

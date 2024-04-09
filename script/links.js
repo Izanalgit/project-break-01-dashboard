@@ -9,6 +9,15 @@ sectionlinkAPP.appendChild(linkAPP);
 
 const linksapp = document.getElementById("links");
 
+//Botón NAV
+const navlin = document.querySelector("nav");
+
+let linkAppBtn = document.createElement("button");
+linkAppBtn.id = "blinks";
+linkAppBtn.classList.add("navBtn");
+
+navlin.appendChild(linkAppBtn);
+
 //Estructura DOM
 
 linksapp.innerHTML=(

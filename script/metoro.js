@@ -14,6 +14,15 @@ sectionmetAPP.appendChild(metApp);
 
 const metoroapp = document.getElementById("metoro");
 
+//Botón NAV
+const navmet = document.querySelector("nav");
+
+let metoroAppBtn = document.createElement("button");
+metoroAppBtn.id = "bmetoro";
+metoroAppBtn.classList.add("navBtn");
+
+navmet.appendChild(metoroAppBtn);
+
 //Estructura DOM
 
 //DOM inicial del input de ciudad

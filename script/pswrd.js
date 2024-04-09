@@ -14,6 +14,15 @@ sectionpswAPP.appendChild(pswApp);
 
 const pswrdapp = document.getElementById("pswrdapp");
 
+//Botón NAV
+const navpwd = document.querySelector("nav");
+
+let pswAppBtn = document.createElement("button");
+pswAppBtn.id = "bpswrdapp";
+pswAppBtn.classList.add("navBtn");
+
+navpwd.appendChild(pswAppBtn);
+
 //Esctructura DOM
 
 pswrdapp.innerHTML = (

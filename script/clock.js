@@ -8,6 +8,15 @@ sectionclkAPP.appendChild(clkApp);
 
 const clockapp = document.getElementById("clockapp");
 
+//Botón NAV
+const navclo = document.querySelector("nav");
+
+let clockAppBtn = document.createElement("button");
+clockAppBtn.id = "bclockapp";
+clockAppBtn.classList.add("navBtn");
+
+navclo.appendChild(clockAppBtn);
+
 //Fecha
 const time = () =>{
     let fulldate = new Date();

@@ -1,5 +1,8 @@
 /* APP */
 #metoro{
+    display: flex;
+    flex-direction: column;
+
     padding: 1%;
 }
 #metorologia{

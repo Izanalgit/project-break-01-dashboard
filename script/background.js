@@ -24,4 +24,38 @@ setInterval(() => {
     // document.body.style.background = `black url("${bgLib[randomBackground(bgLib)]}")`;
 },400);
 
-//en random no se aprecia caer el codigo como en las pelis, por eso le he puesto un counter y en orden
+
+//Evento botones NAV
+
+const navButtons = document.querySelectorAll(".navBtn");
+
+const homeBtn = document.getElementById("homeBtn");
+homeBtn.style.display="none";
+
+const allarticles = document.querySelectorAll("article");
+
+//Botones Apps
+for(let but in navButtons){
+    if(but<navButtons.length){
+        navButtons[but].addEventListener("click", () =>{
+            
+            homeBtn.style.display="block";
+
+            let actualArt = navButtons[but].id.slice(1);
+            let actualApp = document.getElementById(actualArt);
+            actualApp.style.display="flex";
+        
+            for(let artcl of allarticles){
+                if(artcl.id!==actualArt){
+                    artcl.style.display="none";
+                }
+            }
+    });
+    }
+}
+
+//Boton Home
+homeBtn.addEventListener("click",()=>{
+    homeBtn.style.display="none";
+    for(let artcl of allarticles)artcl.style.display="flex";
+})
