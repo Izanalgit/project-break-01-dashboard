@@ -4,7 +4,7 @@
 
 /*FONDO DE PANTALLA*/
 body{
-    background-image: url("./../assets/imgs/m1.png");   
+    background-image: url("./../assets/imgs/m-0.png");   
 }
 
 /* ESTILO BASE */
@@ -184,6 +184,10 @@ nav button{
     border-color: greenyellow;
     box-shadow: 0 0 .8em greenyellow;
 }
+.active{
+    border-color: greenyellow;
+    box-shadow: 0 0 .8em greenyellow;
+}
 
 /* clases evento */
 .centerApps{
@@ -211,6 +215,8 @@ nav button{
 
         box-shadow: none;
         border: none;
+
+        font-size: medium;
     }
     main{
         display: flex;

@@ -1,17 +1,7 @@
-const bgLib = [
-    "./assets/imgs/m1.png",
-    "./assets/imgs/m2.png",
-    "./assets/imgs/m3.png",
-    "./assets/imgs/m4.png",
-    "./assets/imgs/m5.png",
-    "./assets/imgs/m6.png",
-    "./assets/imgs/m7.png",
-    "./assets/imgs/m8.png",
-    "./assets/imgs/m9.png",
-    "./assets/imgs/m10.png",
-    "./assets/imgs/m11.png",
-    "./assets/imgs/m12.png"
-];
+let bgLib = [];
+for(let imgs=0;imgs<50;imgs++){
+ bgLib.push(`./assets/imgs/m-${imgs}.png`)
+}
 
 // const randomBackground = (lib) => Math.trunc((Math.random() * lib.length));
 let counter = 0;
@@ -22,7 +12,7 @@ setInterval(() => {
     document.body.style.background = `black url("${bgLib[counter]}")`;
     
     // document.body.style.background = `black url("${bgLib[randomBackground(bgLib)]}")`;
-},400);
+},100);
 
 
 //Evento botones NAV
@@ -49,12 +39,17 @@ for(let but in navButtons){
             containerApp?
             mainDOM.classList.add("centerShortApp"):
             mainDOM.classList.remove("centerShortApp");
-        
+
             for(let artcl of allarticles){
                 if(artcl.id!==actualArt){
                     artcl.style.display="none";
                 }
             }
+
+            //Efecto Active
+            let lastBtn = document.getElementsByClassName("active");
+            if(lastBtn[0])lastBtn[0].classList.remove("active");
+            navButtons[but].classList.add("active");
     });
     }
 }
@@ -65,4 +60,7 @@ homeBtn.addEventListener("click",()=>{
     homeBtn.classList.add("hidden");
     mainDOM.classList.remove("centerShortApp");
     for(let artcl of allarticles)artcl.style.display="flex";
+    
+    let lastBtn = document.getElementsByClassName("active");
+    if(lastBtn[0])lastBtn[0].classList.remove("active");
 })
