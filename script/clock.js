@@ -26,7 +26,7 @@ const time = () =>{
         secs : fulldate.getSeconds(),
 
         day : fulldate.getDate(),
-        mth : fulldate.getMonth(),
+        mth : fulldate.getMonth() + 1,
         yar : fulldate.getFullYear(),
 
         fullH : function(){return`${crt(this.hour)} : ${crt(this.minu)} : ${crt(this.secs)}`},
