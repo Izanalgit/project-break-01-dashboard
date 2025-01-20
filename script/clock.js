@@ -25,7 +25,7 @@ const time = () =>{
         minu : fulldate.getMinutes(),
         secs : fulldate.getSeconds(),
 
-        day : fulldate.getDay(),
+        day : fulldate.getDate(),
         mth : fulldate.getMonth(),
         yar : fulldate.getFullYear(),
 
