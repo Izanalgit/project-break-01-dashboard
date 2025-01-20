@@ -25,12 +25,12 @@ const time = () =>{
         minu : fulldate.getMinutes(),
         secs : fulldate.getSeconds(),
 
-        day : fulldate.getDate(),
-        mth : fulldate.getMonth() + 1,
+        day: crt(fulldate.getDate()),
+        mth: crt(fulldate.getMonth() + 1),
         yar : fulldate.getFullYear(),
 
         fullH : function(){return`${crt(this.hour)} : ${crt(this.minu)} : ${crt(this.secs)}`},
-        fullD : function(){return`${crt(this.day)} / ${crt(this.mth)} / ${crt(this.yar)}`}
+        fullD : function(){return `${this.day} / ${this.mth} / ${this.yar}` }
     }
 
     return date;
